@@ -1,44 +1,970 @@
-name: Khảo sát
-description: Điền thông tin của bạn
-title: "[Form] "
+name: Khảo sát nghiên cứu
+description: Tác động của AI cá nhân hóa và tích hợp đa kênh đến hành vi né tránh và chuyển đổi nhà bán lẻ
+title: "[Khảo sát] "
 body:
-  - type: dropdown
-    id: usage
-    attributes:
-      label: Bạn đã từng sử dụng sản phẩm X chưa?
-      options:
-        - Chưa từng sử dụng
-        - Đã từng sử dụng
-        - Đang sử dụng thường xuyên
-    validations:
-      required: true
-
   - type: markdown
     attributes:
       value: |
-        ⚠️ **Nếu bạn chọn "Chưa từng sử dụng", hãy bấm Submit luôn, KHÔNG cần điền các câu bên dưới.**
+        ## BẢNG CÂU HỎI KHẢO SÁT NGHIÊN CỨU
+        **Đề tài:** Tác động của AI cá nhân hóa và tích hợp đa kênh đến hành vi né tránh và chuyển đổi nhà bán lẻ của người tiêu dùng.
 
-  - type: input
-    id: name
+        Câu trả lời chỉ phục vụ mục đích nghiên cứu. Lưu ý: phản hồi trên GitHub có thể hiển thị công khai cùng tên tài khoản của bạn.
+
+        **Cách trả lời:** hãy chủ động chọn một đáp án ở MỖI câu. Nếu để trống, câu đó sẽ được ghi là chưa trả lời.
+  - type: markdown
     attributes:
-      label: Họ tên
-    validations:
-      required: false
-
+      value: |
+        ## PHẦN I: CÂU HỎI SÀNG LỌC
   - type: dropdown
-    id: major
+    id: sc1
     attributes:
-      label: Ngành học
+      label: "SC1. Thương hiệu/chuỗi bán lẻ bạn mua hoặc nhận hàng trực tiếp tại cửa hàng trong 6 tháng qua"
+      description: "Hãy nghĩ đến MỘT thương hiệu/chuỗi bán lẻ (bất kỳ ngành nào) mà bạn đã mua hoặc nhận hàng trực tiếp tại cửa hàng trong 6 tháng qua. Nếu có nhiều nơi, chọn nơi bạn mua thường xuyên nhất."
       options:
-        - Kinh doanh quốc tế
-        - Kinh tế
-        - Khác
+        - "Circle K (Cửa hàng tiện lợi)"
+        - "7-Eleven (Cửa hàng tiện lợi)"
+        - "FamilyMart (Cửa hàng tiện lợi)"
+        - "GS25 (Cửa hàng tiện lợi)"
+        - "B's Mart (Cửa hàng tiện lợi)"
+        - "Uniqlo (Thời trang)"
+        - "H&M (Thời trang)"
+        - "Zara (Thời trang)"
+        - "Canifa (Thời trang)"
+        - "Routine (Thời trang)"
+        - "Owen (Thời trang)"
+        - "WinMart / WinMart+ (Siêu thị)"
+        - "Bách Hóa Xanh (Siêu thị)"
+        - "Co.opmart (Siêu thị)"
+        - "AEON (Siêu thị)"
+        - "Lotte Mart (Siêu thị)"
+        - "Khác (ghi rõ ở ô bên dưới)"
+        - "Tôi chưa từng mua trực tiếp tại cửa hàng của thương hiệu nào → DỪNG KHẢO SÁT"
     validations:
       required: false
-
-  - type: textarea
-    id: feedback
+  - type: input
+    id: sc1_other
     attributes:
-      label: Trải nghiệm / Góp ý
+      label: "SC1b. Nếu chọn \"Khác\", ghi rõ tên thương hiệu"
     validations:
       required: false
+  - type: dropdown
+    id: sc2
+    attributes:
+      label: "SC2. Trong 6 tháng qua, bạn đã từng dùng ứng dụng hoặc website của chính thương hiệu bạn chọn ở SC1 để xem sản phẩm, đặt hàng hoặc tra cứu ưu đãi chưa?"
+      options:
+        - "Có (tiếp tục khảo sát)"
+        - "Chưa từng (DỪNG KHẢO SÁT)"
+    validations:
+      required: false
+  - type: dropdown
+    id: sc3
+    attributes:
+      label: "SC3. Khi mua tại cửa hàng của thương hiệu ở SC1, bạn có đọc số điện thoại, quét mã thành viên hoặc đăng nhập tài khoản (cùng tài khoản dùng trên app/website) để tích điểm hoặc nhận ưu đãi không?"
+      options:
+        - "Thường xuyên"
+        - "Thỉnh thoảng"
+        - "Hiếm khi"
+        - "Không bao giờ (DỪNG KHẢO SÁT)"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **ĐIỀU KIỆN DỪNG:** nếu ở SC1 bạn chọn "Tôi chưa từng mua trực tiếp...", hoặc ở SC2 chọn "Chưa từng", hoặc ở SC3 chọn "Không bao giờ" thì **hãy bấm Submit ngay, KHÔNG cần trả lời các câu bên dưới.** Cảm ơn bạn đã dành thời gian!
+  - type: markdown
+    attributes:
+      value: |
+        ## PHẦN II: THÔNG TIN CÁ NHÂN
+  - type: dropdown
+    id: q1
+    attributes:
+      label: "Q1. Giới tính"
+      options:
+        - "Nam"
+        - "Nữ"
+        - "Khác"
+    validations:
+      required: false
+  - type: dropdown
+    id: q2
+    attributes:
+      label: "Q2. Độ tuổi"
+      options:
+        - "0 - 18 tuổi"
+        - "19 - 25 tuổi"
+        - "26 - 30 tuổi"
+        - "31 - 35 tuổi"
+        - "36 - 40 tuổi"
+        - "41 - 50 tuổi"
+        - "Từ 51 tuổi trở lên"
+    validations:
+      required: false
+  - type: dropdown
+    id: q3
+    attributes:
+      label: "Q3. Thu nhập cá nhân hàng tháng (VND)"
+      options:
+        - "Dưới 5 triệu"
+        - "5 đến dưới 10 triệu"
+        - "10 đến dưới 15 triệu"
+        - "15 đến dưới 20 triệu"
+        - "20 đến dưới 30 triệu"
+        - "Từ 30 triệu trở lên"
+    validations:
+      required: false
+  - type: dropdown
+    id: q4
+    attributes:
+      label: "Q4. Nghề nghiệp"
+      options:
+        - "Sinh viên"
+        - "Công chức, viên chức"
+        - "Tự kinh doanh"
+        - "Nội trợ"
+        - "Hưu trí"
+        - "Khác"
+    validations:
+      required: false
+  - type: dropdown
+    id: q5
+    attributes:
+      label: "Q5. Nơi sống"
+      options:
+        - "TP.HCM"
+        - "Hà Nội"
+        - "Thành phố trực thuộc trung ương khác"
+        - "Tỉnh/thành khác"
+    validations:
+      required: false
+  - type: dropdown
+    id: q6
+    attributes:
+      label: "Q6. Bạn đã từng tham khảo và sử dụng sự gợi ý của cửa hàng/kênh bán lẻ khi mua sắm trước đây chưa?"
+      options:
+        - "Chưa từng dùng"
+        - "Đã dùng 1–2 lần"
+        - "Thỉnh thoảng"
+        - "Thường xuyên"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ## PHẦN III: NỘI DUNG ĐÁNH GIÁ
+        Thang đo 7 điểm: **1 = Rất không đồng ý ... 7 = Rất đồng ý.** Khi trả lời, hãy nghĩ đến thương hiệu/nhà bán lẻ bạn đã chọn ở SC1.
+  - type: dropdown
+    id: pu1
+    attributes:
+      label: "PU1. Nhờ vào sự quen thuộc với các tiện ích AI (như thông báo app, tự thanh toán, màn hình thông minh) giúp tôi tìm được những thứ theo nhu cầu nhanh hơn"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pu2
+    attributes:
+      label: "PU2. Các dịch vụ AI này giúp tôi cải thiện chất lượng quyết định mua sắm của tôi (ít mua nhầm hoặc bỏ sót đồ phù hợp)."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pu3
+    attributes:
+      label: "PU3. Nhìn chung, các dịch vụ AI này rất hữu ích đối với tôi."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pu4
+    attributes:
+      label: "PU4. Việc sử dụng các dịch vụ AI này giúp tôi tiết kiệm thời gian và công sức."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppq1
+    attributes:
+      label: "PPQ1. Hệ thống đề xuất các gợi ý có mức độ tương thích cao với sở thích và nhu cầu cá nhân của tôi"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppq2
+    attributes:
+      label: "PPQ2. Các thông báo từ ứng dụng trên điện thoại và gợi ý tại cửa hàng luôn hiển thị đúng thứ tôi cần và rất hữu ích"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppq3
+    attributes:
+      label: "PPQ3. Thời điểm hệ thống đưa ra gợi ý nhìn chung là rất phù hợp."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppq4
+    attributes:
+      label: "PPQ4. Hệ thống cập nhật nhanh chóng những thay đổi trong sở thích gần đây của tôi."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppq5
+    attributes:
+      label: "PPQ5. Những sản phẩm hoặc lựa chọn được gợi ý hầu hết đều rất đáng để cân nhắc."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppi1
+    attributes:
+      label: "PPI1. Tôi có thể dễ dàng xem lại lý do hệ thống đề xuất sản phẩm/mức giá này."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppi2
+    attributes:
+      label: "PPI2. Hệ thống dường như sử dụng rất nhiều dữ liệu cá nhân của tôi để đưa ra ưu đãi."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppi3
+    attributes:
+      label: "PPI3. Các đề xuất có vẻ dành riêng cho tôi chứ không mang tính chung chung"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppi4
+    attributes:
+      label: "PPI4. Hệ thống AI dường như biết được những thói quen/ sở thích của tôi"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ppi5
+    attributes:
+      label: "PPI5. Các gợi ý mua sắm luôn thay đổi phù hợp với sở thích của tôi, kể cả khi tôi dùng app hay đến trực tiếp cửa hàng"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ait1
+    attributes:
+      label: "AIT1. Tôi biết rõ lý do tại sao mình lại nhận được những gợi ý sản phẩm và mức giá này."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ait2
+    attributes:
+      label: "AIT2. Hệ thống giải thích rất dễ hiểu lý do tại sao họ lại gợi ý những món đồ này cho tôi"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ait3
+    attributes:
+      label: "AIT3. Bất cứ khi nào tôi thắc mắc, hệ thống đều giải thích rõ ràng lý do họ đưa ra các gợi ý đó"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: ait4
+    attributes:
+      label: "AIT4. Tôi có thể hiểu tại sao các đề xuất hoặc mức giá được dành riêng cho tôi"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: uc1
+    attributes:
+      label: "UC1. Tôi có thể dễ dàng thay đổi cài đặt hoặc tắt hẳn các tính năng gợi ý này nếu muốn"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: uc2
+    attributes:
+      label: "UC2. Tôi có quyền tự quyết định dữ liệu nào của mình được phép dùng cho đề xuất/định giá."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: uc3
+    attributes:
+      label: "UC3. Tôi có thể xóa hoặc rút lại các dữ liệu/ sở thích đã cung cấp trước đây trên hệ thống."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: uc4
+    attributes:
+      label: "UC4. Tôi có quyền quản lý và kiểm soát hồ sơ dữ liệu mua sắm mà nhà bán lẻ đang lưu giữ về tôi."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: al1
+    attributes:
+      label: "AL1. Tôi biết rõ ứng dụng/hệ thống đang dùng những thông tin cá nhân nào của tôi để đưa ra gợi ý và mức giá."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: al2
+    attributes:
+      label: "AL2. Tôi hiểu rằng các gợi ý từ AI không phải lúc nào cũng hoàn hảo và đôi khi có thể bị sai lệch"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: al3
+    attributes:
+      label: "AL3. Tôi có tự hiểu và giải thích sơ lược cách thức dịch vụ AI tạo ra các đề xuất."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: al4
+    attributes:
+      label: "AL4. Tôi có thể hiểu sơ qua về cách AI hoạt động để đưa ra các gợi ý mua sắm cho mình."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: al5
+    attributes:
+      label: "AL5. Tôi hiểu rằng chất lượng dữ liệu đầu vào sẽ quyết định độ chính xác của kết quả AI."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pse1
+    attributes:
+      label: "PSE1. Tôi cảm thấy tự tin khi tự thiết lập hoặc điều chỉnh các quyền riêng tư."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pse2
+    attributes:
+      label: "PSE2. Tôi biết cách làm giảm rủi ro bị thu thập hoặc lạm dụng dữ liệu cá nhân không cần thiết."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pse3
+    attributes:
+      label: "PSE3. Khi có lo ngại về quyền riêng tư xuất hiện, tôi biết mình cần phải thực hiện những thao tác gì."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pse4
+    attributes:
+      label: "PSE4. Tôi có thể kiểm soát hiệu quả cách cửa hàng và ứng dụng sử dụng dữ liệu của tôi."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pi1
+    attributes:
+      label: "PI1. Các tương tác từ AI này tạo cho tôi cảm giác bị mình bị ảnh hưởng đến đời tư"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pi2
+    attributes:
+      label: "PI2. Tôi cảm thấy hệ thống tiếp cận quá mức cần thiết, giống như mình đang bị theo dõi ngầm."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pi3
+    attributes:
+      label: "PI3. Nhìn chung, các tính năng AI này khiến tôi cảm thấy không thoải mái."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pi4
+    attributes:
+      label: "PI4. Việc AI liên tục đưa ra gợi ý mua hàng khiến tôi cảm thấy quyền riêng tư của mình bị vi phạm"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pi5
+    attributes:
+      label: "PI5. Ứng dụng theo dõi một cách khiến tôi không còn cảm thấy thoải mái khi mua sắm"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: tai1
+    attributes:
+      label: "TAI1. Tôi tin rằng hệ thống AI này vận hành có năng lực và đáng tin cậy."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: tai2
+    attributes:
+      label: "TAI2. Tôi tin ứng dụng này luôn đặt lợi ích của khách hàng lên hàng đầu và không làm ảnh hưởng cho mình"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: tai3
+    attributes:
+      label: "TAI3. Tôi tin hệ thống này hoạt động minh bạch và đối xử công bằng với tất cả khách hàng"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: tai4
+    attributes:
+      label: "TAI4. Tôi cảm thấy yên tâm khi mua sắm dựa trên các gợi ý của ứng dụng/cửa hàng"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: tai5
+    attributes:
+      label: "TAI5. Tôi tin rằng nếu những gợi ý xảy ra sai sót, các lỗi đó sẽ nhanh chóng được phát hiện và khắc phục."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pai1
+    attributes:
+      label: "PAI1. Hệ thống AI của nhà bán lẻ nhận diện lịch sử và hành vi mua sắm của tôi liền mạch từ ứng dụng/website đến cửa hàng trực tiếp."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pai2
+    attributes:
+      label: "PAI2. Các gợi ý và ưu đãi cá nhân hóa do AI cung cấp được đồng bộ nhất quán trên mọi kênh mua sắm."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pai3
+    attributes:
+      label: "PAI3. Dữ liệu mua sắm của tôi được AI kết nối trơn tru khi chuyển đổi giữa mua online và mua tại cửa hàng."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pai4
+    attributes:
+      label: "PAI4. Nhà bán lẻ sử dụng công nghệ AI để tạo ra hành trình mua sắm tích hợp và liền mạch giữa các kênh."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pr1
+    attributes:
+      label: "PR1. Tôi phản kháng vì cảm thấy mình đang bị thao túng bởi gợi ý của AI."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pr2
+    attributes:
+      label: "PR2. Tôi cảm thấy mình đang bị kiểm soát hơn là được hướng dẫn tự do lựa chọn."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: pr3
+    attributes:
+      label: "PR3. Tôi chủ động phớt lờ và làm ngược lại các gợi ý của AI."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: aa1
+    attributes:
+      label: "AA1. Tôi ngừng sử dụng các nền tảng mua sắm vì sự can thiệp của AI."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: aa2
+    attributes:
+      label: "AA2. Tôi chủ động chặn hoặc tắt các tính năng theo dõi của AI."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: aa3
+    attributes:
+      label: "AA3. Tôi né tránh các khu vực/tính năng có sự can thiệp dày đặc của AI."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: aa4
+    attributes:
+      label: "AA4. Tôi né tránh các tính năng AI mang tính dự đoán sở thích/hành vi."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: rsi1
+    attributes:
+      label: "RSI1. Tôi mua sắm tại nhà bán lẻ này ít thường xuyên hơn trước đây."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: rsi2
+    attributes:
+      label: "RSI2. Tôi ngừng mua sắm tại nhà bán lẻ này và tôi sẽ không mua ở đây nữa."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: rsi3
+    attributes:
+      label: "RSI3. Tôi chuyển hẳn sang mua sắm tại một nhà bán lẻ đối thủ cạnh tranh."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: crrs1
+    attributes:
+      label: "CRRS1. Tôi cảm thấy quen thuộc với nhà bán lẻ này"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: crrs2
+    attributes:
+      label: "CRRS2. Với tư cách là khách hàng thường xuyên, tôi có một mối quan hệ chất lượng cao với nhà bán lẻ này."
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: dropdown
+    id: crrs3
+    attributes:
+      label: "CRRS3. Tôi nghĩ tới nhà bán lẻ này đầu tiên khi tôi có ý định mua hàng"
+      options:
+        - "1 - Rất không đồng ý"
+        - "2 - Không đồng ý"
+        - "3 - Hơi không đồng ý"
+        - "4 - Trung lập"
+        - "5 - Hơi đồng ý"
+        - "6 - Đồng ý"
+        - "7 - Rất đồng ý"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        Cảm ơn bạn đã hoàn thành khảo sát! Hãy bấm **Submit new issue** để gửi câu trả lời.
