@@ -1,0 +1,44 @@
+name: Khảo sát
+description: Điền thông tin của bạn
+title: "[Form] "
+body:
+  - type: dropdown
+    id: usage
+    attributes:
+      label: Bạn đã từng sử dụng sản phẩm X chưa?
+      options:
+        - Chưa từng sử dụng
+        - Đã từng sử dụng
+        - Đang sử dụng thường xuyên
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Nếu bạn chọn "Chưa từng sử dụng", hãy bấm Submit luôn, KHÔNG cần điền các câu bên dưới.**
+
+  - type: input
+    id: name
+    attributes:
+      label: Họ tên
+    validations:
+      required: false
+
+  - type: dropdown
+    id: major
+    attributes:
+      label: Ngành học
+      options:
+        - Kinh doanh quốc tế
+        - Kinh tế
+        - Khác
+    validations:
+      required: false
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Trải nghiệm / Góp ý
+    validations:
+      required: false
